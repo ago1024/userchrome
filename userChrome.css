@@ -134,7 +134,7 @@
 /************************************************************************************************/
 
 /* navigation toolbar buttons appearance - [only use one at a time] *****************************/
-@import "./css/buttons/buttons_on_navbar_classic_appearance.css"; /**/
+/* @import "./css/buttons/buttons_on_navbar_classic_appearance.css"; /**/
 /* @import "./css/buttons/buttons_on_navbar_classic_appearance_v2.css"; /**/
 /* @import "./css/buttons/buttons_on_navbar_windows_classic_theme_appearance.css"; /**/
 /* @import "./css/buttons/buttons_on_navbar_glass_appearance.css";			/* <--- good for Dark themes */
@@ -159,7 +159,7 @@
 /* @import "./css/buttons/buttons_on_navbar_more_compact_mode_custom_icons_fix.css"; /**/
 
 /* icon appearance - [only use one at a time] (custom icons do not scale in HiDPI modes) ********/
-@import "./css/buttons/icons_colorized.css"; /**/
+/* @import "./css/buttons/icons_colorized.css"; /**/
 /* @import "./css/buttons/icons_white_icons.css"; /**/
 /* @import "./css/buttons/icons_custom_icons.css"; /**/  /* aka "Mozilla Mix" from CTB */
 /* @import "./css/buttons/icons_custom_icons_fx1.css"; /**/
@@ -181,12 +181,12 @@
 
 /* bookmarks toolbar - buttons appearance - [only use one at a time] ****************************/
 /* old bookmarks toolbar button appearance ******************************************************/
-@import "./css/buttons/buttons_on_bookmarks_toolbar_old_size_and_appearance.css"; /**/  /* Windows only */
+/* @import "./css/buttons/buttons_on_bookmarks_toolbar_old_size_and_appearance.css"; /**/  /* Windows only */
 /* @import "./css/buttons/buttons_on_bookmarks_toolbar_classic_appearance.css"; /**/
 /* @import "./css/buttons/buttons_on_bookmarks_toolbar_classic_appearance_items.css"; /**/
 
 /* bookmarks menu button - 'button & popup' appearance ******************************************/
-@import "./css/buttons/bookmarks_menu_button_localized_label_on_bookmarks_toolbar.css"; /**/
+/* @import "./css/buttons/bookmarks_menu_button_localized_label_on_bookmarks_toolbar.css"; /**/
 /* @import "./css/buttons/bookmarks_menu_button_popup_showall_top_hidden.css"; /**/
 /* @import "./css/buttons/bookmarks_menu_button_popup_showall_bottom_hidden.css"; /**/
 /* @import "./css/buttons/bookmarks_menu_button_popup_sidebar_item_hidden.css"; /**/
@@ -202,7 +202,7 @@
 /* @import "./css/buttons/buttons_on_tabs_toolbar_classic_appearance.css"; /**/			/* <--- EXPERIMENTAL */
 
 /* other button settings ************************************************************************/
-@import "./css/buttons/whatnew_button_always_hidden.css"; /**/
+/* @import "./css/buttons/whatnew_button_always_hidden.css"; /**/
 /* @import "./css/buttons/forward_button_hide_when_disabled.css"; /**/
 /* @import "./css/buttons/back_and_forward_separated_history_popups.css"; /**/
 /* @import "./css/buttons/back_and_forward_leftclick_history_popup_hidden.css"; /**/
@@ -244,8 +244,8 @@
 /* @import "./css/appbutton/appbutton_hidden.css"; /**/
 
 /* application/hamburger button popup ***********************************************************/
-@import "./css/appbutton/appbutton_popup_more_icons.css"; /**/
-@import "./css/appbutton/appbutton_popup_icons_colorized.css"; /**/
+/* @import "./css/appbutton/appbutton_popup_more_icons.css"; /**/
+/* @import "./css/appbutton/appbutton_popup_icons_colorized.css"; /**/
 /* @import "./css/appbutton/appbutton_popup_sync_hidden.css"; /**/
 /* @import "./css/appbutton/appbutton_popup_logins_and_passwords_hidden.css"; /**/
 /* @import "./css/appbutton/appbutton_popup_trackingprotection_hidden.css"; /**/
@@ -302,7 +302,7 @@
 /* @import "./css/appbutton/appbutton_in_titlebar_macOS_fix.css"; /**/
 
 /* button color - [only use one at a time] ******************************************************/
-@import "./css/appbutton/appbutton_in_titlebar_autocolor.css"; /**/
+/* @import "./css/appbutton/appbutton_in_titlebar_autocolor.css"; /**/
 /* @import "./css/appbutton/appbutton_in_titlebar_autocolor57p.css"; /**/
 /* @import "./css/appbutton/appbutton_in_titlebar_transparent.css"; /**/
 /* @import "./css/appbutton/appbutton_in_titlebar_semi_transparent.css"; /**/
@@ -318,7 +318,7 @@
 /************************************************************************************************/
 
 /* custom tab appearance - [only use one at a time] *********************************************/
-@import "./css/tabs/classic_squared_tabs.css"; /**/
+/* @import "./css/tabs/classic_squared_tabs.css"; /**/
 /* @import "./css/tabs/classic_squared_tabs_australized.css"; /**/
 
 /* custom tab colors are set inside color_variables***.css file(s) ******************************/
@@ -352,8 +352,8 @@
 /* @import "./css/tabs/tabs_below_navigation_toolbar_fx65_v2_force_hidden_menubar.css"; /**/ /* no menubar when OS titlebar is active */
 /* @import "./css/tabs/tabs_below_navigation_toolbar_fx65_v2_macOS.css"; /**/
 /* - Fx 68-71 Windows/Linux (use the Fx 65+ versions for macOS) *********************************/
-/* @import "./css/tabs/tabs_below_navigation_toolbar_fx68.css"; /**/
-/* - Fx 72-73 Windows/Linux (use the Fx 65+ versions for macOS) *********************************/
+@import "./css/tabs/tabs_below_navigation_toolbar_fx68.css"; /**/
+/* - Fx 72+ Windows/Linux (use the Fx 65+ versions for macOS) ***********************************/
 /* @import "./css/tabs/tabs_below_navigation_toolbar_fx72.css"; /**/
 /* - Fx 74+ Windows/Linux ***********************************************************************/
 /* [!] might require overriding url bars 'selection color' --> see corresponding area ***********/ 
@@ -427,7 +427,7 @@
 /* @import "./css/tabs/tab_scrollbuttons_both_on_toolbars_end_fx72.css"; /**/  /* Fx 72+ */
 
 /* restore empty/missing tab favicon - [only use one at a time] *********************************/
-@import "./css/tabs/missing_tab_favicon_restored_default.css"; /**/
+/* @import "./css/tabs/missing_tab_favicon_restored_default.css"; /**/
 /* @import "./css/tabs/missing_tab_favicon_restored_globe_v2.css"; /**/
 /* @import "./css/tabs/missing_tab_favicon_restored_sheet.css"; /**/
 /* @import "./css/tabs/missing_tab_favicon_restored_dotted.css"; /**/
@@ -468,7 +468,7 @@
 /* @import "./css/tabs/default_tabs_tab_line_purple_in_private_mode.css"; /**/
 
 /* other tab settings ***************************************************************************/
-@import "./css/tabs/tab_icon_colors.css"; /**/
+/* @import "./css/tabs/tab_icon_colors.css"; /**/
 /* @import "./css/tabs/newtab_tab_size_equals_tab_size.css"; /**/
 /* @import "./css/tabs/newtab_button_always_visible.css"; /**/
 /* @import "./css/tabs/tab_icon_inactive_tabs_lower_opacity.css"; /**/
@@ -485,8 +485,8 @@
 /* GENERAL UI ***********************************************************************************/
 /************************************************************************************************/
 
-@import "./css/generalui/private_mode_indicator_hidden.css"; /**/
-@import "./css/generalui/bookmark_icons_colorized.css"; /**/
+/* @import "./css/generalui/private_mode_indicator_hidden.css"; /**/
+/* @import "./css/generalui/bookmark_icons_colorized.css"; /**/
 /* @import "./css/generalui/bookmarks_smaller_more_bookmarks_icon.css"; /**/
 /* @import "./css/generalui/send_to_device_menuitems_hidden.css"; /**/
 /* @import "./css/generalui/set_as_desktop_background_menuitems_hidden.css"; /**/
@@ -530,7 +530,7 @@
 /* page context menu items: 'back', 'forward', 'reload', 'stop', 'bookmarks' ********************/
 /* @import "./css/generalui/context_bfrsb_icons_colorized.css"; /**/
 /* menuitem labels - [only use one at a time] ***************************************************/
-@import "./css/generalui/context_bfrsb_labels_without_icons.css"; /**/
+/* @import "./css/generalui/context_bfrsb_labels_without_icons.css"; /**/
 /* @import "./css/generalui/context_bfrsb_labels_with_icons.css"; /**/
 /* @import "./css/generalui/context_bfrsb_labels_with_and_without_icons_Lin_macOS.css"; /**/		/* <-- Lin/macOS fix v1 */
 /* @import "./css/generalui/context_bfrsb_labels_with_and_without_icons_Lin_macOSv2.css"; /**/		/* <-- Lin/macOS fix v2 */
@@ -548,7 +548,7 @@
 /* @import "./css/generalui/close_icon_firefox3.css"; /**/
 
 /* SEARCHBAR ************************************************************************************/
-@import "./css/generalui/searchbar_glassplus_indicator_hidden.css"; /**/
+/* @import "./css/generalui/searchbar_glassplus_indicator_hidden.css"; /**/
 /* @import "./css/generalui/searchbar_go_button_hidden.css"; /**/
 
 /* searchbar popup ******************************************************************************/
@@ -605,8 +605,8 @@
 /* @import "./css/toolbars/addonbar_extra_bookmarks_toolbar_below_navbar_fx65.css"; /**/  /* <--- EXPERIMENTAL */
  
 /* GENERAL TOOLBAR SETTINGS *********************************************************************/
-@import "./css/toolbars/toolbars_old_padding.css"; /**/
-@import "./css/toolbars/tabs_toolbar_adjustments.css"; /**/
+/* @import "./css/toolbars/toolbars_old_padding.css"; /**/
+/* @import "./css/toolbars/tabs_toolbar_adjustments.css"; /**/
 /* @import "./css/toolbars/tabs_toolbar_adjustments_macOS_fix.css"; /**/					/*  <-- macOS fix */
 
 /* edit target file to select which items to hide ***********************************************/
@@ -621,7 +621,7 @@
 /* @import "./css/toolbars/menubar_color.css"; /**/
 
 /* BOOKMARKS TOOLBAR ****************************************************************************/
-@import "./css/toolbars/bookmarks_toolbar_old_height.css"; /**/
+/* @import "./css/toolbars/bookmarks_toolbar_old_height.css"; /**/
 /* @import "./css/toolbars/bookmarks_toolbar_autohide.css"; /**/
 /* @import "./css/toolbars/bookmarks_toolbar_bookmark_labels_hidden.css"; /**/
 /* @import "./css/toolbars/bookmarks_toolbar_in_fullscreen_mode.css"; /**/
@@ -644,7 +644,7 @@
 /* @import "./css/toolbars/bookmarks_toolbar_multiple_lines_fx74.css"; /**/ /* <--- EXPERIMENTAL */ /*Fx74+*/
 
 /* TOOLBAR COLORS *******************************************************************************/
-@import "./css/toolbars/general_toolbar_colors.css"; /**/
+/* @import "./css/toolbars/general_toolbar_colors.css"; /**/
 /* @import "./css/toolbars/tab_toolbar_colors_force_menubar_color.css"; /**/
 
 /* AeroGlass TOOLBARS - separated - set per toolbar / WIN10 fix for GLASS8 **********************/
@@ -680,14 +680,14 @@
 /* @import "./css/locationbar/identitybox_padlock_icon_hidden.css"; /**/
 
 /* additional icons/buttons and tweaks for third party page action buttons **********************/
-@import "./css/locationbar/icons_colorized.css"; /**/
+/* @import "./css/locationbar/icons_colorized.css"; /**/
 /* @import "./css/locationbar/reader_alternative_icon.css"; /**/
 /* @import "./css/locationbar/popup_blocked_button_hidden.css"; /**/
 /* @import "./css/locationbar/zoom_button_hidden.css"; /**/
 /* @import "./css/locationbar/go_button_in_location_bar_hidden.css"; /**/
 
 /* page action button (three dots) / separator **************************************************/
-@import "./css/locationbar/pageaction_separator_in_location_bar_hidden.css"; /**/
+/* @import "./css/locationbar/pageaction_separator_in_location_bar_hidden.css"; /**/
 /* @import "./css/locationbar/pageaction_button_in_location_bar_hidden.css"; /**/
 /* @import "./css/locationbar/pageaction_button_rotated_and_last_pageaction_button.css"; /**/
 
