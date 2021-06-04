@@ -1,0 +1,17 @@
+/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Github: https://github.com/aris-t2/customcssforfx ************************************/
+/****************************************************************************************/
+
+
+@import "./tabs_below_navigation_toolbar_fx74.css";
+
+#navigator-toolbox {
+  position: relative;
+}
+
+@media (-moz-proton) {
+	
+  .tabbrowser-tab {
+	min-height: unset !important; 
+  }
+}
