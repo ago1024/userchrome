@@ -1,4 +1,4 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
@@ -6,7 +6,7 @@
 /******* button icon colors ******/
 
 /* red */
-:-moz-any(#containers-panelmenu,#web-apps-button,#e10s-button,#panic-button,#cut-button,#zoom-out-button,#stop-button),
+:is(#containers-panelmenu,#web-apps-button,#e10s-button,#panic-button,#cut-button,#zoom-out-button,#stop-button,#logins-button),
 #pocket-button:not([open]),
 #PanelUI-quit:not(:hover),
 .tabs-closebutton:hover,
@@ -15,66 +15,106 @@
 #stop-reload-button[animate] > #reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image{
   fill: red !important;
 }
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext :-moz-any(#containers-panelmenu,#web-apps-button,#e10s-button,#panic-button,#cut-button,#zoom-out-button,#stop-button),
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext #pocket-button:not([open]),
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext #PanelUI-quit:not(:hover),
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext .tabs-closebutton:hover,
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext .tab-close-button:hover,
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext #stop-button .toolbarbutton-animatable-image,
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext #stop-reload-button[animate] > #reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) :is(#containers-panelmenu,#web-apps-button,#e10s-button,#panic-button,#cut-button,#zoom-out-button,#stop-button,#logins-button),
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) #pocket-button:not([open]),
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) #PanelUI-quit:not(:hover),
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) .tabs-closebutton:hover,
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) .tab-close-button:hover,
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) #stop-button .toolbarbutton-animatable-image,
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) #stop-reload-button[animate] > #reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
   fill: #ff5a5a !important;
+}
+@media (-moz-content-prefers-color-scheme: dark) {
+	:root[lwtheme]:not([style*='--lwt-header-image']) :is(#containers-panelmenu,#web-apps-button,#e10s-button,#panic-button,#cut-button,#zoom-out-button,#stop-button,#logins-button),
+	:root[lwtheme]:not([style*='--lwt-header-image']) #pocket-button:not([open]),
+	:root[lwtheme]:not([style*='--lwt-header-image']) #PanelUI-quit:not(:hover),
+	:root[lwtheme]:not([style*='--lwt-header-image']) .tabs-closebutton:hover,
+	:root[lwtheme]:not([style*='--lwt-header-image']) .tab-close-button:hover,
+	:root[lwtheme]:not([style*='--lwt-header-image']) #stop-button .toolbarbutton-animatable-image,
+	:root[lwtheme]:not([style*='--lwt-header-image']) #stop-reload-button[animate] > #reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+	  fill: #ff5a5a !important;
+	}
 }
 
  /*ROYAL BLUE*/
-toolbar:not(#TabsToolbar):not(:-moz-lwtheme) :-moz-any(.scrollbutton-up,.scrollbutton-down,#new-tab-button,#alltabs-button),
+:root:not([lwtheme]) toolbar:not(#TabsToolbar) :is(.scrollbutton-up,.scrollbutton-down,#new-tab-button,#alltabs-button),
 #downloads-button[indicator="true"]:not([attention="success"]) #downloads-indicator-icon,
-:-moz-any(#save-page-button,#back-button,#forward-button,#new-window-button,.search-go-button,#downloads-button,#zoom-in-button,#copy-button,#find-button,#sidebar-button,#fullscreen-button,#PanelUI-customize,#password-notification-icon,#PanelUI-fxa-status,#sync-button,#tabview-button,#social-share-button) {
+:is(#save-page-button,#back-button,#forward-button,#new-window-button,.search-go-button,#downloads-button,#zoom-in-button,#copy-button,#find-button,#sidebar-button,#fullscreen-button,#PanelUI-customize,#password-notification-icon,#PanelUI-fxa-status,#sync-button,#tabview-button,#social-share-button) {
   fill: #4169e1 !important;
 }
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext toolbar:not(#TabsToolbar):not(:-moz-lwtheme) :-moz-any(.scrollbutton-up,.scrollbutton-down,#new-tab-button,#alltabs-button),
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext #downloads-button[indicator="true"]:not([attention="success"]) #downloads-indicator-icon,
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext :-moz-any(#save-page-button,#back-button,#forward-button,#new-window-button,.search-go-button,#downloads-button,#zoom-in-button,#copy-button,#find-button,#sidebar-button,#fullscreen-button,#PanelUI-customize,#password-notification-icon,#PanelUI-fxa-status,#sync-button,#tabview-button,#social-share-button) {
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) toolbar:not(#TabsToolbar):not() :is(.scrollbutton-up,.scrollbutton-down,#new-tab-button,#alltabs-button),
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) #downloads-button[indicator="true"]:not([attention="success"]) #downloads-indicator-icon,
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) :is(#save-page-button,#back-button,#forward-button,#new-window-button,.search-go-button,#downloads-button,#zoom-in-button,#copy-button,#find-button,#sidebar-button,#fullscreen-button,#PanelUI-customize,#password-notification-icon,#PanelUI-fxa-status,#sync-button,#tabview-button,#social-share-button) {
   fill: #00d2ff !important; 
+}
+@media (-moz-content-prefers-color-scheme: dark) {
+	:root[lwtheme]:not([style*='--lwt-header-image']) toolbar:not(#TabsToolbar) :is(.scrollbutton-up,.scrollbutton-down,#new-tab-button,#alltabs-button),
+	:root[lwtheme]:not([style*='--lwt-header-image']) #downloads-button[indicator="true"]:not([attention="success"]) #downloads-indicator-icon,
+	:root[lwtheme]:not([style*='--lwt-header-image']) :is(#save-page-button,#back-button,#forward-button,#new-window-button,.search-go-button,#downloads-button,#zoom-in-button,#copy-button,#find-button,#sidebar-button,#fullscreen-button,#PanelUI-customize,#password-notification-icon,#PanelUI-fxa-status,#sync-button,#tabview-button,#social-share-button) {
+	  fill: #00d2ff !important; 
+	}
 }
 
 /*green*/
-:-moz-any(#add-ons-button,#search-go-button,.search-go-button,#urlbar-go-button,.urlbar-go-button,#paste-button,#email-link-button,#reload-button),
+:is(#add-ons-button,#unified-extensions-button,#search-go-button,.search-go-button,#urlbar-go-button,.urlbar-go-button,#paste-button,#email-link-button,#reload-button,#import-button),
 #reload-button .toolbarbutton-animatable-image {
   fill: green !important;
 }
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext :-moz-any(#add-ons-button,#search-go-button,.search-go-button,#urlbar-go-button,.urlbar-go-button,#paste-button,#email-link-button,#reload-button),
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext #reload-button .toolbarbutton-animatable-image {
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) :is(#add-ons-button,#unified-extensions-button,#search-go-button,.search-go-button,#urlbar-go-button,.urlbar-go-button,#paste-button,#email-link-button,#reload-button,#import-button),
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) #reload-button .toolbarbutton-animatable-image {
   fill: lightgreen !important;
+}
+@media (-moz-content-prefers-color-scheme: dark) {
+	:root[lwtheme]:not([style*='--lwt-header-image']) :is(#add-ons-button,#unified-extensions-button,#search-go-button,.search-go-button,#urlbar-go-button,.urlbar-go-button,#paste-button,#email-link-button,#reload-button,#import-button),
+	:root[lwtheme]:not([style*='--lwt-header-image']) #reload-button .toolbarbutton-animatable-image {
+	  fill: lightgreen !important;
+	}
 }
 
 /*orange*/
-:-moz-any(#open-file-button,#home-button,#feed-button){
+:is(#open-file-button,#home-button,#feed-button,#reset-pbm-toolbar-button){
   fill: orange !important;
 }
 
  /*PURPLE*/
-:-moz-any(#history-button,#history-panelmenu,#library-button,#privatebrowsing-button,#print-button,#fxa-toolbar-menu-button){
+:is(#history-button,#history-panelmenu,#library-button,#privatebrowsing-button,#print-button,#fxa-toolbar-menu-button){
   fill: #800080 !important;
 }
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext :-moz-any(#history-button,#history-panelmenu,#library-button,#privatebrowsing-button,#print-button,#fxa-toolbar-menu-button) {
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) :is(#history-button,#history-panelmenu,#library-button,#privatebrowsing-button,#print-button,#fxa-toolbar-menu-button) {
   fill: #ff00ff !important;
+}
+@media (-moz-content-prefers-color-scheme: dark) {
+	:root[lwtheme]:not([style*='--lwt-header-image']) :is(#history-button,#history-panelmenu,#library-button,#privatebrowsing-button,#print-button,#fxa-toolbar-menu-button) {
+	  fill: #ff00ff !important;
+	}
 }
 
  /*AZURE*/
-:-moz-any(#webide-button,#PanelUI-menu-button,#nav-bar-overflow-button,#bookmarks-menu-button,#bookmarks-button),
+:is(#webide-button,#PanelUI-menu-button,#nav-bar-overflow-button,#bookmarks-menu-button,#bookmarks-button,#bookmarks-toolbar-placeholder,#screenshot-button),
 #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   -moz-context-properties: fill;
   fill: #336699 !important;
 }
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext :-moz-any(#webide-button,#PanelUI-menu-button,#nav-bar-overflow-button,#bookmarks-menu-button,#bookmarks-button),
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) :is(#webide-button,#PanelUI-menu-button,#nav-bar-overflow-button,#bookmarks-menu-button,#bookmarks-button,#bookmarks-toolbar-placeholder,#screenshot-button),
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   fill: #64a3e2 !important;
+}
+@media (-moz-content-prefers-color-scheme: dark) {
+	:root[lwtheme]:not([style*='--lwt-header-image']) :is(#webide-button,#PanelUI-menu-button,#nav-bar-overflow-button,#bookmarks-menu-button,#bookmarks-button,#bookmarks-toolbar-placeholder,#screenshot-button),
+	:root[lwtheme]:not([style*='--lwt-header-image']) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+	  fill: #64a3e2 !important;
+	}
 }
 
 /* grey*/
-:-moz-any(#developer-button,#preferences-button,#characterencoding-button) {
+:is(#developer-button,#preferences-button,#characterencoding-button) {
   fill: grey !important;
 }
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext :-moz-any(#developer-button,#preferences-button,#characterencoding-button) {
+:root[lwtheme]:-moz-lwtheme-brighttext:not([style*='--lwt-header-image']) :is(#developer-button,#preferences-button,#characterencoding-button) {
   fill: lightgrey !important;
+}
+@media (-moz-content-prefers-color-scheme: dark) {
+	:root[lwtheme]:not([style*='--lwt-header-image']) :is(#developer-button,#preferences-button,#characterencoding-button) {
+	  fill: lightgrey !important;
+	}
 }

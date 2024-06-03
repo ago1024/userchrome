@@ -1,4 +1,4 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
@@ -8,4 +8,5 @@
   min-height: 0px !important;
   width: 10px !important;
   height: 10px !important;
+  padding: 0 !important;
 }

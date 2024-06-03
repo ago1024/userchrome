@@ -1,7 +1,8 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
-#nav-bar-overflow-button[open="true"] .toolbarbutton-icon {
+
+#nav-bar-overflow-button[open] .toolbarbutton-icon {
   transform: rotate(90deg) !important;
 }

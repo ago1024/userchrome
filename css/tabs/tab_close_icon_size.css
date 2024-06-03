@@ -1,10 +1,13 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
 
-/* NOTE  ********************************************************************************/
-/* Variables are set inside '.\config\' folders CSS files, if complete package is used! */
+/* NOTE
+   The below variables are overridden by the ones used inside 
+   ./config/general_variables.css file, if this projects full package is used.
+   Set custom values inside ./config/general_variables.css in that case.
+*/
 
 
 :root {
@@ -20,4 +23,3 @@
   min-height: var(--tab_close_icons_size) !important;
   height: var(--tab_close_icons_size) !important;
 }
-

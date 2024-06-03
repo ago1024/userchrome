@@ -1,10 +1,10 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
 
-#nav-bar:-moz-lwtheme #urlbar ::-moz-selection,
-#nav-bar:not(:-moz-lwtheme) #urlbar ::-moz-selection {
+:root[lwtheme] #nav-bar #urlbar ::-moz-selection,
+:root:not([lwtheme]) #nav-bar #urlbar ::-moz-selection {
   background-color: Highlight !important;
   color: HighlightText !important;
 }

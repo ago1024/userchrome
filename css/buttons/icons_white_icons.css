@@ -1,4 +1,4 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
@@ -13,7 +13,7 @@
 #stop-button,
 #stop-button .toolbarbutton-animatable-image,
 #stop-reload-button[animate] > #reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image,
-#save-page-button ,
+#save-page-button,
 #back-button,
 #forward-button,
 #new-window-button,
@@ -21,9 +21,9 @@
 #alltabs-button,
 .scrollbutton-up,
 .scrollbutton-down,
-#navigator-toolbox #TabsToolbar:not(:-moz-lwtheme) #alltabs-button,
-#navigator-toolbox #TabsToolbar:not(:-moz-lwtheme) .tabbrowser-arrowscrollbox > .scrollbutton-up,
-#navigator-toolbox #TabsToolbar:not(:-moz-lwtheme) .tabbrowser-arrowscrollbox > .scrollbutton-down,
+:root:not([lwtheme]) #navigator-toolbox #TabsToolbar #alltabs-button,
+:root:not([lwtheme]) #navigator-toolbox #TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-up,
+:root:not([lwtheme]) #navigator-toolbox #TabsToolbar .tabbrowser-arrowscrollbox > .scrollbutton-down,
 #downloads-button,
 #downloads-button[indicator="true"]:not([attention="success"]) #downloads-indicator-icon,
 #zoom-in-button,
@@ -40,7 +40,7 @@
 #email-link-button,
 #reload-button,
 #reload-button .toolbarbutton-animatable-image,
-#add-ons-button,
+#add-ons-button,#unified-extensions-button,
 #open-file-button,
 #home-button,
 #feed-button,

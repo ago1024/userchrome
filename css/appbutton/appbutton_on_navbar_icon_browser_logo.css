@@ -1,11 +1,10 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
 
 #PanelUI-button #PanelUI-menu-button {
   list-style-image: unset !important;
-  -moz-image-region: unset !important;
 }
 
 #PanelUI-button #PanelUI-menu-button .toolbarbutton-icon {
@@ -13,5 +12,3 @@
   width: 16px !important;
   height: 16px !important;
 }
-
-/**/

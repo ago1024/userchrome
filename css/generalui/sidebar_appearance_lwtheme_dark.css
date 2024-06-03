@@ -1,4 +1,4 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
@@ -11,7 +11,7 @@
   border: none !important;
 }
 
-#sidebar:-moz-lwtheme {
+:root[lwtheme] #sidebar {
   background-image: var(--lwt-header-image) !important;
   background-color: var(--toolbar-bgcolor) !important;
   background-size: cover !important;

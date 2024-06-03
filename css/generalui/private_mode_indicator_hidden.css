@@ -1,4 +1,4 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
@@ -9,4 +9,8 @@
 * #private-browsing-indicator,
 * .private-browsing-indicator {
   visibility: collapse !important;
+}
+
+#private-browsing-indicator-with-label {
+  display: none !important;
 }

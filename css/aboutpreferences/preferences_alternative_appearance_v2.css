@@ -1,8 +1,9 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userContent.css tweaks *******************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
-@-moz-document url(about:preferences),url-prefix(about:preferences){
+
+@-moz-document url(about:preferences),url-prefix(about:preferences),url(about:settings),url-prefix(about:settings) {
 
 	.category {
 	  margin-inline-start: 0px !important;
@@ -12,7 +13,7 @@
  	#preferences-stack,.sticky-container,
 	page,
 	.dialogBox .groupbox-title {
-	  -moz-appearance: none !important;
+	  appearance: none !important;
 	  background: -moz-Dialog !important;
 	}
 
@@ -28,6 +29,19 @@
 	.groupbox-body,
 	#dialogFrame{
 	  background-color: -moz-Dialog !important;
+	}
+	
+	@media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+ 	#preferences-stack,.sticky-container,
+	page,
+	.dialogBox .groupbox-title,
+	#dialogFrame,
+	.main-content,
+	.groupbox-body,
+	#dialogFrame {
+	  color: white !important;
+	}
+	
 	}
 	
 	.groupbox-body{
@@ -74,17 +88,25 @@
 	  transition-duration: unset !important;
 	}
 	
+	@media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+
+		#categories .category:not([selected]):not(:hover){
+		  color: white !important;
+		}
+	}
+	
 	/* groupbox */
 	.main-content groupbox{
-	  -moz-appearance: groupbox !important;
+	  appearance: auto !important;
+	  -moz-default-appearance: groupbox !important;
 	}
 
 	.main-content groupbox caption {
 	  background: -moz-Dialog !important;
-	  -moz-margin-start: 2px !important;
-	  -moz-padding-start: 2px !important;
-	  -moz-margin-end: 2px !important;
-	  -moz-padding-end: 2px !important;
+	  margin-inline-start: 2px !important;
+	  padding-inline-start: 2px !important;
+	  margin-inline-end: 2px !important;
+	  padding-inline-end: 2px !important;
 	}
 	
 	.main-content .groupbox-title {
@@ -99,23 +121,18 @@
 	/* category icons */
 	#category-search .category-icon {
 	  list-style-image: url("./../../image/prefs_search.png") !important;
-	  -moz-image-region: rect(0, 32px, 32px, 0) !important;
 	}
 	#category-general .category-icon {
 	  list-style-image: url("./../../image/prefs_general.png") !important;
-	  -moz-image-region: rect(0, 32px, 32px, 0) !important;
 	}
 	#category-home .category-icon {
 	  list-style-image: url("./../../image/prefs_home.png") !important;
-	  -moz-image-region: rect(0, 32px, 32px, 0) !important;
 	}
 	#category-privacy .category-icon {
 	  list-style-image: url("./../../image/prefs_privacy.png") !important; 
-	  -moz-image-region: rect(0, 32px, 32px, 0) !important;
 	}
 	#category-sync .category-icon {
 	  list-style-image: url("./../../image/prefs_sync.png") !important;
-	  -moz-image-region: rect(0, 32px, 32px, 0) !important;
 	}
 	#categories .category .category-icon {
 	  height: 32px !important;
@@ -125,9 +142,15 @@
 	/* alignment and text/font appearance */
 	#mainPrefPane {
 	  color: black !important;
-	  -moz-padding-start: 20px !important;
+	  padding-inline-start: 20px !important;
 	  margin-top: -35px !important;
-	  -moz-margin-start: -20px !important;
+	  margin-inline-start: -20px !important;
+	}
+	
+	@media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+		#mainPrefPane {
+		  color: white !important;
+		}
 	}
 	
 	textbox {
@@ -139,7 +162,7 @@
 	  margin-top: 20px !important;
 	  margin-bottom: 20px !important;
 	  background-color: -moz-Dialog !important;
-	  -moz-margin-start: -1px !important;
+	  margin-inline-start: -1px !important;
 	}
 
 	.header label {
@@ -182,24 +205,29 @@
 	}
 	
 	button:not(.button-link):not(.close-icon):not(#contentBlockingToggle) {
-	  padding: 0px !important;
+	  padding-top: 2px !important;
+	  padding-bottom: 2px !important;
 	}
+
 	menulist{
 	  padding:2px !important;
 	}
 	
 	button:not(.button-link):not(.close-icon):not(.spinbuttons-button){
-	  -moz-appearance: button !important;
+	  appearance: auto !important;
+	  -moz-default-appearance: button !important;
 	}
 
 	menulist{
-	  -moz-appearance: menulist !important;
+	  appearance: auto !important;
+	  -moz-default-appearance: menulist !important;
 	}
 	
 	/* menulist popup */
 	@media all and (-moz-windows-theme:aero) {
 		menupopup menuitem {
-		  -moz-appearance: menuitem !important;
+		  appearance: auto !important;
+		  -moz-default-appearance: menuitem !important;
 		}
 		menupopup menuitem:not([disabled="true"]) {
 		  color: black !important;
@@ -229,17 +257,13 @@
 	
 	/* checkbox and radio items */
 	checkbox .checkbox-check {
-	  -moz-appearance: unset  !important;
+	  appearance: unset  !important;
 	  box-shadow: unset !important;
-	  padding: unset !important;
-	  margin: unset !important;
 	}
 
 	radio .radio-check {
-	  -moz-appearance: unset !important;
+	  appearance: unset !important;
 	  box-shadow: unset !important;
-	  padding: unset !important;
-	  margin: unset !important;
 	}
 
 	radio,
@@ -258,7 +282,7 @@
 		}
 	
 		#homeContentsGroup checkbox label {
-		  -moz-margin-start: 2px !important;
+		  margin-inline-start: 2px !important;
 		}
 		
 		radio *{
@@ -278,7 +302,7 @@
 		}
 		
 		#homeContentsGroup checkbox label {
-		  -moz-margin-start: 8px !important;
+		  margin-inline-start: 8px !important;
 		}
 
 	  }
@@ -292,14 +316,14 @@
 		}
 
 		#homeContentsGroup checkbox label {
-		  -moz-margin-start: 6px !important;
+		  margin-inline-start: 6px !important;
 		}
 		
 	}
 	
 	@media all and (-moz-windows-theme:aero) {
 		
-	  @media (-moz-os-version: windows-win7) {
+	  @media (-moz-platform: windows-win7),(-moz-os-version: windows-win7) {
 		
 		checkbox .checkbox-check,
 		radio .radio-check,
@@ -309,7 +333,7 @@
 		}
 
 		#homeContentsGroup checkbox label {
-		  -moz-margin-start: 6px !important;
+		  margin-inline-start: 6px !important;
 		}
 	  }
 		
@@ -348,6 +372,10 @@
 	#advancedPrefs #tabsElement tab,
 	#advancedPrefs #tabsElement {
 	  min-height: unset !important;
+	}
+	
+	.sidebar-footer-list {
+	  margin-inline: 0 !important;
 	}
 	
 }
@@ -392,16 +420,19 @@
 }
 
 *[subdialog="true"] button:not(.button-link):not(.close-icon):not(.spinbuttons-button){
-  -moz-appearance: button !important;
+  appearance: auto !important;
+  -moz-default-appearance: button !important;
 }
 *[subdialog="true"] menulist{
-  -moz-appearance: menulist !important;
+  appearance: auto !important;
+  -moz-default-appearance: menulist !important;
 }
 
 /* menu popup */
 @media all and (-moz-windows-theme:aero) {
 	*[subdialog="true"] menupopup menuitem {
-	  -moz-appearance: menuitem !important;
+	  appearance: auto !important;
+	  -moz-default-appearance: menuitem !important;
 	}
 	*[subdialog="true"] menupopup menuitem:not([disabled="true"]),
 	*[subdialog="true"] menupopup menuitem:not([disabled="true"])[selected] {
@@ -431,14 +462,14 @@
 
 /* checkbox / radios */
 *[subdialog="true"] checkbox .checkbox-check {
-  -moz-appearance: unset  !important;
+  appearance: unset  !important;
   box-shadow: unset !important;
   padding: unset !important;
   margin: unset !important;
 }
 
 *[subdialog="true"] radio .radio-check {
-  -moz-appearance: unset !important;
+  appearance: unset !important;
   box-shadow: unset !important;
   padding: unset !important;
   margin: unset !important;
@@ -492,13 +523,13 @@
 	}
 	
 	#FontsDialog checkbox label {
-	  -moz-margin-start: -4px !important;
+	  margin-inline-start: -4px !important;
 	}
 }
 
 @media all and (-moz-windows-theme:aero) {
 	
-  @media (-moz-os-version: windows-win7) {
+  @media (-moz-platform: windows-win7), (-moz-os-version: windows-win7) {
 	
 	*[subdialog="true"] checkbox .checkbox-check,
 	*[subdialog="true"] radio .radio-check,
@@ -515,7 +546,7 @@
 	}
 	
 	#FontsDialog checkbox label {
-	  -moz-margin-start: -4px !important;
+	  margin-inline-start: -4px !important;
 	}
 
   }

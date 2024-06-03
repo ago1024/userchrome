@@ -1,15 +1,18 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
-/* If complete CustomCSSforFx release package is used, ':root' variables have to be set **
-   inside /config/general_variables.css! ************************************************/
 
+/* NOTE
+   The below variables are overridden by the ones used inside 
+   ./config/general_variables.css file, if this projects full package is used.
+   Set custom values inside ./config/general_variables.css in that case.
+*/
 
 :root{
   --results_font_size: 10pt;
 }
 
-#urlbar-results :-moz-any(.urlbarView-tags, .urlbarView-action, .urlbarView-title, .urlbarView-url) {
+#urlbar-results :is(.urlbarView-tags, .urlbarView-action, .urlbarView-title, .urlbarView-url) {
   font-size: var(--results_font_size) !important;
 }

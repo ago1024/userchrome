@@ -1,4 +1,4 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
@@ -8,51 +8,7 @@
 
 :root {
   --bookmark_items_lines: 1 !important; /* override multiple bookmark lines option */
-  --addonbar_height: 27px;
-}
-
-/* create an empty space below navigation toolbar */
-#main-window:not([customizing="true"]) #nav-bar[currentset*="personal-bookmarks"] {
-  padding-bottom: 28px !important;
-}
-
-/* reduce maximum width of location bar and search bar on navigation toolbar */
-#main-window:not([customizing="true"]) #nav-bar[currentset*="personal-bookmarks"] :-moz-any(#urlbar-container, #urlbar, #search-container, #searchbar)  {
-  min-width: 50px !important;
-}
-
-/* move bookmarks to empty space below navigation toolbar, if on navigation toolbar */
-#main-window:not([customizing="true"]) #nav-bar[currentset*="personal-bookmarks"]:not([currentset*="personal-bookmarks-"]) #personal-bookmarks {
-  position: absolute !important;
-  display: block !important;
-  bottom: 1px !important;
-  min-width: 0 !important;
-  width: auto !important;
-  max-width: 100vw !important;
-}
-
-/* reduce size of bookmarks 'more bookmarks' menu chevron and remove its background color on navigation toolbar */
-#nav-bar[currentset*="personal-bookmarks"] #personal-bookmarks #PlacesChevron .toolbarbutton-icon {
-  min-width: 0px !important;
-  min-height: 0px !important;
-  width: 16px !important;
-  height: 16px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  background: unset !important;
-  box-shadow: unset !important;
-}
-
-/* set minimum height for bookmarks, when on navigation toolbar */
-#nav-bar[currentset*="personal-bookmarks"] #personal-bookmarks toolbarbutton.bookmark-item:not(.subviewbutton) {
-  min-height: calc( var(--addonbar_height) - 3px) !important;
-}
-
-/* adjustments */
-#nav-bar[currentset*="personal-bookmarks"] #personal-bookmarks {
-  min-width: 40px !important;
-  width: auto !important;
-  max-width: 50vw !important;
+  --addonbar_height: 25px;
 }
 
 /* move bookmarks toolbar to bottom + style bookmarks toolbar */
@@ -63,19 +19,17 @@
   bottom: 0 !important;
   width: 100% !important;
   height: var(--addonbar_height) !important;
-  -moz-padding-start: 2px !important;
-  -moz-padding-end: 2px !important;
+  padding-inline-start: 1px !important;
+  padding-inline-end: 1px !important;
   border-top: 1px solid var(--toolbox-border-bottom-color) !important;
-  z-index: 1000 !important;
+  z-index: 1 !important;
 }
-#navigator-toolbox > #PersonalToolbar:-moz-lwtheme {
+
+:root[lwtheme] #navigator-toolbox > #PersonalToolbar {
   background-repeat: no-repeat !important;
   background-position: bottom left !important;
   background-color: var(--toolbar-bgcolor) !important;
   background-image: var(--lwt-header-image) !important;
-}
-#PersonalToolbar > *  {
-  min-height: calc( var(--addonbar_height) - 3px) !important;
 }
 
 /* free some space below content */
@@ -120,10 +74,9 @@
 
 /* bookmarks item box width */
 #PersonalToolbar #personal-bookmarks {
-  display: flex !important;
-  min-width: unset !important;
-  width: inherit !important;
-  max-width: unset !important;
+  min-width: 40px !important;
+  width: auto !important;
+  max-width: 50vw !important;
 }
 
  /* override multiple bookmark lines option */
@@ -140,19 +93,119 @@
 
 /* adjust button badges */
 #PersonalToolbar toolbarbutton .toolbarbutton-badge {
-  -moz-margin-end: -1px !important;
+  margin-inline-end: -1px !important;
   margin-top: -4px !important;  
   padding: 1px !important;
   min-width: unset !important;
   font-size: 9px !important;
 }
 
+#main-window:not([chromehidden*="toolbar"]) #navigator-toolbox > #PersonalToolbar {
+  border-top: 1px solid rgba(204,204,204,0.8) !important;
+}
 
-/* icon shadows for dark and light themes */ /*
-#main-window[lwthemetextcolor=bright] #navigator-toolbox > #PersonalToolbar > .webextension-browser-action > .toolbarbutton-badge-stack {
-  filter: drop-shadow(1px 1px 0.5px #bbb) drop-shadow(-1px -1px 0.5px #bbb) drop-shadow(-1px 1px 0.5px #bbb) drop-shadow(1px -1px 0.5px #bbb);
+#tracking-protection-icon-animatable-box {
+  visibility: inherit !important;
 }
-#main-window[lwthemetextcolor=dark] #navigator-toolbox > #PersonalToolbar > .webextension-browser-action > .toolbarbutton-badge-stack {
-  filter: drop-shadow(1px 1px 1px #222);
+
+#PersonalToolbar .toolbaritem-combined-buttons {
+  margin-inline: 0px !important;
 }
-/**/
+
+/*
+#PersonalToolbar .toolbarbutton-1 {
+  margin: 0px !important; 
+}
+
+#PersonalToolbar toolbarbutton {
+  padding: 0px !important;
+}
+/*
+#PersonalToolbar .toolbarbutton-1 {
+  --toolbarbutton-inner-padding: 1px !important;
+  --toolbarbutton-outer-padding: 0px !important;
+}*/
+
+#PersonalToolbar #bookmarks-menu-button {
+  -moz-box-align: center !important;
+  align-items: center !important;
+}
+
+#main-window:not([inDOMFullscreen="true"],[sizemode="fullscreen"]) #browser,
+#main-window:not([inDOMFullscreen="true"],[sizemode="fullscreen"]) #customization-container {
+  margin-bottom: var(--addonbar_height) !important; 
+}
+
+#PersonalToolbar .toolbarbutton-1 {
+  margin-block: 0px !important; 
+}
+
+
+
+/*************************/
+
+#main-window:not([customizing="true"]) #nav-bar:has(#personal-bookmarks) {
+  padding-bottom: 26px !important;
+}
+
+/* reduce maximum width of location bar and search bar on navigation toolbar */
+#main-window:not([customizing="true"]) #nav-bar:has(#personal-bookmarks) :is(#urlbar-container, #urlbar, #search-container, #searchbar)  {
+  min-width: 50px !important;
+}
+
+/* move bookmarks to empty space below navigation toolbar, if on navigation toolbar */
+#main-window:not([customizing="true"]) #nav-bar:has(#personal-bookmarks) #personal-bookmarks {
+  position: absolute !important;
+  display: block !important;
+  /*bottom: 0px !important;*/
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: 100vw !important;
+}
+
+#main-window:not([customizing="true"]) #nav-bar:has(#personal-bookmarks) #personal-bookmarks {
+  margin-top: 37px !important;	
+}
+
+#main-window:not([customizing="true"])[uidensity="compact"] #nav-bar:has(#personal-bookmarks) #personal-bookmarks {
+  margin-top: 32px !important;
+}
+
+#main-window:not([customizing="true"])[uidensity="touch"] #nav-bar:has(#personal-bookmarks) #personal-bookmarks {
+ margin-top: 41px !important;
+}
+
+/* reduce size of bookmarks 'more bookmarks' menu chevron and remove its background color on navigation toolbar */
+#nav-bar:has(#personal-bookmarks) #personal-bookmarks #PlacesChevron .toolbarbutton-icon {
+  min-width: 0px !important;
+  min-height: 0px !important;
+  width: 16px !important;
+  height: 16px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: unset !important;
+  box-shadow: unset !important;
+}
+
+/* set minimum height for bookmarks, when on navigation toolbar */
+#nav-bar:has(#personal-bookmarks) #personal-bookmarks toolbarbutton.bookmark-item:not(.subviewbutton) {
+  min-height: 24px !important;
+}
+
+/* adjustments */
+#nav-bar:has(#personal-bookmarks) #personal-bookmarks {
+  min-width: 40px !important;
+  width: auto !important;
+  max-width: 50vw !important;
+}
+
+/* workaround for megabar_expanding_breakout_disabled.css */
+#main-window #nav-bar:has(#personal-bookmarks) #urlbar[breakout],
+#main-window #nav-bar:has(#personal-bookmarks) #urlbar[breakout][breakout-extend] {
+  top: calc(0px + ((var(--urlbar-container-height,--urlbar-toolbar-height) - var(--urlbar-height)) / 2)) !important;
+}
+
+#nav-bar:has(#personal-bookmarks) #personal-toolbar-empty-description,
+#nav-bar:has(#personal-bookmarks) #personal-bookmarks toolbarbutton.bookmark-item:not(.subviewbutton) {
+  padding: 0 2px !important; 
+}
