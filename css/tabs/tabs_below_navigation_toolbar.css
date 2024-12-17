@@ -12,33 +12,26 @@
 }
 
 #TabsToolbar {
-  position: absolute;
-  display: block;
-  bottom: 0;
-  width: 100vw;
-  background-clip: padding-box;
+  order: 100;
   color: var(--toolbar-color);
-  z-index: 2;
 }
 
-#tabbrowser-tabs {
-  width: 100%;
+#main-window:is([tabsintitlebar],[customtitlebar]):not([sizemode="fullscreen"]) #toolbar-menubar[inactive] ~ #nav-bar {
+  padding-top: 24px !important;
 }
 
-@media (-moz-platform: windows),(-moz-platform: linux) {
-#navigator-toolbox {
-  position: relative;
-  padding-bottom: var(--tab_below_navigation_toolbar_bottom_padding);
-}
-
-#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #titlebar,
-#main-window[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen="true"]) #titlebar {
-  height: 26px;
-}
-
-/* prevent possible item overlapping with caption buttons */
-#main-window[tabsintitlebar] #toolbar-menubar {
+#main-window:is([tabsintitlebar],[customtitlebar]) #toolbar-menubar {
   padding-inline-end: 140px;
+}
+
+#main-window:is([tabsintitlebar],[customtitlebar]) #toolbar-menubar:not([inactive]) {
+  height: 24px !important;
+}
+
+#toolbar-menubar[autohide="true"] {
+    :root:is([tabsintitlebar],[customtitlebar]) #navigator-toolbox:not([tabs-hidden]) > & {
+      min-height: unset !important;
+    }
 }
 
 /* move caption buttons to windows top right position */
@@ -49,48 +42,49 @@
   display: block;
 }
 
+#main-window:is([tabsintitlebar],[customtitlebar]):not([sizemode="fullscreen"]) #toolbar-menubar[autohide="true"]:not([inactive="true"]) ~ #TabsToolbar,
+#main-window:is([tabsintitlebar],[customtitlebar]):not([sizemode="fullscreen"]) #toolbar-menubar[autohide="false"] ~ #TabsToolbar {
+  margin-top: 0px !important;
+}
+
+#main-window[sizemode="fullscreen"] #nav-bar {
+  padding-inline-end: 140px !important;
 }
 
 @media (-moz-platform: macos) {
 
-#navigator-toolbox {
-  position: relative;
-  padding-bottom: var(--tab_below_navigation_toolbar_bottom_padding_macOS);
-}
+	#main-window:is([tabsintitlebar],[customtitlebar]):not([sizemode="fullscreen"]):not([inDOMFullscreen="true"]) #navigator-toolbox {
+	  padding-top: var(--tab_below_navigation_toolbar_toolbox_top_padding_macOS);
+	}
 
-#main-window[tabsintitlebar]:not([sizemode="fullscreen"]):not([inDOMFullscreen="true"]) #navigator-toolbox {
-  padding-top: var(--tab_below_navigation_toolbar_toolbox_top_padding_macOS);
-}
+	#main-window:is([tabsintitlebar],[customtitlebar]):not([sizemode="fullscreen"]):not([inDOMFullscreen="true"]) .titlebar-buttonbox-container {
+	  position: fixed;
+	  top: 3px !important;
+	  right: unset;
+	  left: 0;
+	  visibility: visible;
+	  display: block;
+	}
 
-#main-window[tabsintitlebar]:not([sizemode="fullscreen"]):not([inDOMFullscreen="true"]) .titlebar-buttonbox-container {
-  position: fixed;
-  top: 3px !important;
-  right: unset;
-  left: 0;
-  visibility: visible;
-  display: block;
-}
+	:root[lwtheme] #titlebar {
+	  background-image: var(--lwt-header-image, var(--lwt-additional-images));
+	  background-repeat: var(--lwt-background-tiling);
+	  background-position: var(--lwt-background-alignment);
+	}
 
-:root[lwtheme] #titlebar {
-  background-image: var(--lwt-header-image, var(--lwt-additional-images));
-  background-repeat: var(--lwt-background-tiling);
-  background-position: var(--lwt-background-alignment);
-}
+	/* caption button position in maximized mode after moving to the top */
+	#main-window:is([tabsintitlebar],[customtitlebar]):not([inDOMFullscreen="true"]) #toolbar-menubar[autohide="true"] ~ #TabsToolbar .titlebar-buttonbox-container,
+	#main-window:is([tabsintitlebar],[customtitlebar])[sizemode="maximized"]:not([inDOMFullscreen="true"]) #TabsToolbar .titlebar-buttonbox-container {
+	  top: 0;
+	}
 
-/* caption button position in maximized mode after moving to the top */
-#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar[autohide="true"] ~ #TabsToolbar .titlebar-buttonbox-container,
-#main-window[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen="true"]) #TabsToolbar .titlebar-buttonbox-container {
-  top: 0;
-}
-
-#main-window[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen="true"]) #titlebar {
-  height: 0px;
-}
+	#main-window:is([tabsintitlebar],[customtitlebar])[sizemode="maximized"]:not([inDOMFullscreen="true"]) #titlebar {
+	  height: 0px;
+	}
 }
 
 /* remove unneeded items */
 #TabsToolbar .titlebar-buttonbox-container,
-#TabsToolbar .private-browsing-indicator,
 #TabsToolbar #window-controls,
 #TabsToolbar *[type="caption-buttons"],
 #TabsToolbar *[type="pre-tabs"],
@@ -101,7 +95,7 @@
 /* lw themes support */
 /* overrides other settings too */
 :root:not([lwtheme]) #navigator-toolbox #TabsToolbar,
-:root:not([lwtheme]):not([tabsintitlebar]) #TabsToolbar{
+:root:not([lwtheme]):not(:is([tabsintitlebar],[customtitlebar])) #TabsToolbar{
   appearance: none !important;
 }
 
@@ -121,24 +115,24 @@
 }
 
 /* adjust background color */
-:root[lwtheme]:not([style*='--lwt-header-image']) #TabsToolbar {
+:root[lwtheme]:not([style*='--lwt-header-image']) :is(#toolbar-menubar, #TabsToolbar) {
   appearance: none !important;
   background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)) !important;
 }
 
 /* Fixes for projects other settings */
 /* remove application/hamburger button in titlebar and tab toolbars start padding */
-#main-window[tabsintitlebar][sizemode="fullscreen"] #navigator-toolbox #PanelUI-button {
+#main-window:is([tabsintitlebar],[customtitlebar])[sizemode="fullscreen"] #navigator-toolbox #PanelUI-button {
   visibility: collapse;
 }
 
 /* override code inside appbutton in titlebar code */
-#main-window[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
-#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
-#main-window[tabsintitlebar][sizemode="fullscreen"] #TabsToolbar,
-#main-window[uidensity=compact][tabsintitlebar] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
-#main-window[uidensity=compact][tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
-#main-window[tabsintitlebar]:is([sizemode="normal"],[sizemode="maximized"],[sizemode="fullscreen"]) #navigator-toolbox #TabsToolbar {
+#main-window:is([tabsintitlebar],[customtitlebar]) #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
+#main-window:is([tabsintitlebar],[customtitlebar])[sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
+#main-window:is([tabsintitlebar],[customtitlebar])[sizemode="fullscreen"] #TabsToolbar,
+#main-window[uidensity=compact]:is([tabsintitlebar],[customtitlebar]) #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
+#main-window[uidensity=compact]:is([tabsintitlebar],[customtitlebar])[sizemode="maximized"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
+#main-window:is([tabsintitlebar],[customtitlebar]):is([sizemode="normal"],[sizemode="maximized"],[sizemode="fullscreen"]) #navigator-toolbox #TabsToolbar {
   padding-inline-start: 0px !important;
   margin-inline-start: 0px !important;
 }
@@ -149,11 +143,13 @@
 }
 
 /* notification position */
-#tab-notification-deck {
-  position: absolute;
+#tab-notification-deck,
+#tab-notification-deck-template {
+  order: 101;
+  /*position: absolute;
   display: block;
   bottom: calc( -2 * var(--tab_below_navigation_toolbar_bottom_padding) + 8px );
-  width: 100vw;
+  width: 100vw;*/
 }
 
 /* Fx 105+ */
@@ -167,24 +163,25 @@
   margin-inline-start: 0 !important;
 }
 
-/* Fx 106+ */
+/* Fx 106+ *//*
 #private-browsing-indicator-with-label {
   display: none !important;
 }
+*/
 
 @media (-moz-platform: macos) {
-#main-window[tabsintitlebar] #TabsToolbar {
-  padding-inline-end: 0px !important
-}
+	#main-window:is([tabsintitlebar],[customtitlebar]) #TabsToolbar {
+	  padding-inline-end: 0px !important
+	}
 
-/* draggable window */
-#main-window[tabsintitlebar] toolbox#navigator-toolbox{
-  -moz-window-dragging: drag !important;
-}
+	/* draggable window */
+	#main-window:is([tabsintitlebar],[customtitlebar]) toolbox#navigator-toolbox{
+	  -moz-window-dragging: drag !important;
+	}
 
-:is(#TabsToolbar, #nav-bar, #PlacesToolbar) {
-  -moz-window-dragging: no-drag !important;
-}	
+	:is(#TabsToolbar, #nav-bar, #PlacesToolbar) {
+	  -moz-window-dragging: no-drag !important;
+	}	
 }
 
 /* Fx 126+ */

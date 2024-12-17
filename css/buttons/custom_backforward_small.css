@@ -4,6 +4,9 @@
 
 
 /* override custom button shapes */
+#main-window:not([customizing]) #nav-bar #nav-bar-customization-target > :is(#back-button, #forward-button):not(#PlacesChevron)[disabled=true]:is([open],[checked],:hover:active,:active) > .toolbarbutton-icon,
+#main-window:not([customizing]) #nav-bar #nav-bar-customization-target > :is(#back-button, #forward-button)[disabled=true]:is([open],[checked],:hover:active,:active) > .toolbarbutton-text,
+#main-window:not([customizing]) #nav-bar #nav-bar-customization-target > :is(#back-button, #forward-button)[disabled=true]:is([open],[checked],:hover:active,:active) > .toolbarbutton-badge-stack,
 #main-window:not([customizing]) #nav-bar :is(#back-button, #forward-button)[disabled=true]:is([open],[checked],:hover:active,:active) > .toolbarbutton-icon,
 #main-window:not([customizing]) #nav-bar :is(#back-button, #forward-button)[disabled=true]:is([open],[checked],:hover:active,:active) > .toolbarbutton-text,
 #main-window:not([customizing]) #nav-bar :is(#back-button, #forward-button)[disabled=true]:is([open],[checked],:hover:active,:active) > .toolbarbutton-badge-stack,
@@ -34,6 +37,7 @@
   box-shadow: unset !important;
   transition: unset !important;
   fill: unset !important;
+  outline: unset !important;
 }
 
 /* custom small back-forward buttons */
@@ -48,6 +52,7 @@
   box-shadow: unset !important;
   border: unset !important;
   border-radius: unset !important;
+  outline: unset !important;
 }
 
 #main-window #navigator-toolbox #nav-bar #back-button  {

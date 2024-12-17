@@ -41,6 +41,10 @@ menupopup[type=arrow] > menu {
   padding: 0px !important;
 }
 
+menuseparator {
+  padding-block: 0 !important;
+}
+
 * menupopup[type=arrow],
 :is(menupopup, panel)[type=arrow] {
   --panel-padding: 0px !important;
@@ -98,16 +102,6 @@ menupopup[type=arrow] > menu {
 	margin-inline-start: 10px !important;
 	margin-inline-end: 6px !important;
   }
-
-}
-
-@media (-moz-platform: windows-win8), (-moz-platform: windows-win7), (-moz-os-version:windows-win8),(-moz-os-version: windows-win7)  {
-
-	#context-navigation :is(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) {
-	  padding: var(--item_y_padding) 2px !important;
-	  margin-inline-start: 0px !important;
-	  padding-inline-start: 15px !important;
-	}
 
 }
 

@@ -105,7 +105,7 @@
   margin-inline-start: -1px;
 }
 
-:root[tabsintitlebar]:not([extradragspace]) #toolbar-menubar[autohide=true] + #TabsToolbar .tabbrowser-tab::after,
+:root:is([tabsintitlebar],[customtitlebar]):not([extradragspace]) #toolbar-menubar[autohide=true] + :is(#TabsToolbar,#vertical-tabs) .tabbrowser-tab::after,
 .tabbrowser-tab:hover::after,
 #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[beforehovered]::after,
 .tabbrowser-tab[multiselected]::after,
@@ -130,8 +130,8 @@
 }
 
 /* remove active tabs left and right tab border color when using lw-themes */
-:root[lwtheme]:not([lwtheme-mozlightdark]) #TabsToolbar:not([brighttext]) #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected], [multiselected]) > .tab-stack > .tab-background,
-:root[lwtheme]:not([lwtheme-mozlightdark]) #TabsToolbar[brighttext] #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected], [multiselected]) > .tab-stack > .tab-background {
+:root[lwtheme]:not([lwtheme-mozlightdark]) :is(#TabsToolbar,#vertical-tabs):not([brighttext]) #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected], [multiselected]) > .tab-stack > .tab-background,
+:root[lwtheme]:not([lwtheme-mozlightdark]) :is(#TabsToolbar,#vertical-tabs)[brighttext] #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected], [multiselected]) > .tab-stack > .tab-background {
   box-shadow: unset !important;
 }
 
@@ -145,20 +145,20 @@
 }
 
 /* Fx 100+ outline fix */
-:root[lwtheme] #TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon,
+:root[lwtheme] :is(#TabsToolbar,#vertical-tabs) #firefox-view-button[open] > .toolbarbutton-icon,
 :root[lwtheme] .tab-background[selected] {
   outline: unset !important;
 }
 
 /* Fx 101+ */
-@media (-moz-platform: windows-win10), (-moz-os-version:windows-win10) {
+@media (-moz-platform: windows) {
 	
-	#main-window[sizemode="maximized"][tabsintitlebar] #titlebar {
+	#main-window[sizemode="maximized"]:is([tabsintitlebar],[customtitlebar]) #titlebar {
 	  margin-top: -1px !important;
 	}
 }
 
-/* Fx 106+ */
+/* Fx 106+ *//*
 #private-browsing-indicator-with-label {
   display: none !important;
 }
@@ -187,4 +187,10 @@
 
 :root {
   --tab-selected-bgcolor: unset !important;
+}
+
+/* Fx 133+ */
+#tabbrowser-tabs[orient="horizontal"] .tab-background,
+#tabbrowser-tabs[orient="horizontal"] {
+  min-height: unset !important;
 }
